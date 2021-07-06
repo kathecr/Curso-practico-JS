@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Figuras Geometricas</title>
+  </head>
+  <header>
+    <h1>Figuras Geometricas</h1>
+    <section>Este es el primer taller del curso practico de JS</section>
+  </header>
+  <body>
+    <section>
+      <h2>Cuadrado</h2>
+      <label>Escribe cuanto miden los lados de tu cuadrado</label>
+      <input type="number" id="input_cuadrado" />
+      <button type="button" onclick="cuadrado()">Calcular</button>
+      <p>El perimetro es: <span id="perimetroCuadrado"></span></p>
+      <p>El area es: <span id="areaCuadrado"></span></p>
+    </section>
+    <section>
+      <h2>Triangulo</h2>
+      <label>Escribe cuanto miden los lados de tu triangulo</label>
+      <input type="number" id="input_lado_triangulo1" />
+      <input type="number" id="input_lado_triangulo2" />
+      <input type="number" id="input_base_triangulo" />
+      <button type="button" onclick="triangulo()">Calcular</button>      
+      <p>La altura es: <span id="alturaTriangulo"></span></p>
+      <p>El perimetro es: <span id="perimetroTriangulo"></span></p>
+      <p>El area es: <span id="areaTriangulo"></span></p>
+    </section>
+    <section>
+      <h2>Circulo</h2>
+      <label>Escribe cuanto mide el radio de tu circulo</label>
+      <input type="number" id="input_radio_circulo" />
+      <button type="button" onclick="circulo()">Calcular</button>      
+      <p>La diametro es: <span id="diametroCirculo"></span></p>
+      <p>El perimetro es: <span id="perimetroCirculo"></span></p>
+      <p>El area es: <span id="areaCirculo"></span></p>
+    </section>
+    <script src="./figurasFunciones.js"></script>
+  </body>
+</html>
