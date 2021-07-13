@@ -11,23 +11,33 @@ const cuadrado = () => {
 }
 
 //Triangulo
-const alturaTriangulo = (lado1,lado2,base) => Math.sqrt(lado2**2-((lado2**2-lado1**2+base**2)/(2*base))**2)
+const alturaTriangulo = (lado1,lado2,base) => {
+  lado1= Number(lado1)
+  lado2 = Number(lado2)
+  base = Number(base)
+  const max = Math.max(lado1,lado2)
+  const min = Math.min(lado1,lado2)
+  return Math.sqrt(min**2-((min**2-max**2+base**2)/(2*base))**2)
+  
+}
 const perimetroTriangulo = (lado1,lado2,base) => lado1+lado2+base;
 const areaTriangulo = (lado1,lado2,base) => base*alturaTriangulo(lado1,lado2,base)/2
 
 const triangulo = () => {
-  const lado1 = document.querySelector("#input_lado_triangulo1").value
-  const lado2 = document.querySelector("#input_lado_triangulo2").value
-  const base = document.querySelector("#input_base_triangulo").value
-  document.getElementById("perimetroTriangulo").innerHTML = perimetroTriangulo(Number(lado1),Number(lado2),Number(base))
-  document.getElementById("areaTriangulo").innerHTML = areaTriangulo(lado1,lado2,base)
-  document.getElementById("alturaTriangulo").innerHTML = alturaTriangulo(lado1,lado2,base)
+  const ladoA = document.querySelector("#input_lado_trianguloA").value
+  const ladoB = document.querySelector("#input_lado_trianguloB").value
+  const ladoC = document.querySelector("#input_lado_trianguloC").value
+  document.getElementById("perimetroTriangulo").innerHTML = perimetroTriangulo(Number(ladoA),Number(ladoB),Number(ladoC))
+  document.getElementById("areaTriangulo").innerHTML = areaTriangulo(ladoA,ladoB,ladoC)
+  document.getElementById("alturaTrianguloA").innerHTML = alturaTriangulo(ladoB,ladoC,ladoA)
+  document.getElementById("alturaTrianguloB").innerHTML = alturaTriangulo(ladoA,ladoC,ladoB)
+  document.getElementById("alturaTrianguloC").innerHTML = alturaTriangulo(ladoA,ladoB,ladoC)
 }
 //Circulo
 const PI = Math.PI
 const diametroCirculo = radio => radio * 2;
 const areaCirculo = radio => PI*radio**2;
-const perimetroCirculo = radio => PI*diametroCirculo(2);
+const perimetroCirculo = radio => PI*diametroCirculo(radio);
 
 const circulo = () =>{
   const radio = document.querySelector("#input_radio_circulo").value
